@@ -36,6 +36,9 @@ out/
 ### VS Code ###
 .vscode/
 
+### Application Properties ###
+**/src/main/resources/application-dbconn.properties
+
 ### Docker Compose ###
 .env
 mariadb/
