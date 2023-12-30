@@ -1,7 +1,9 @@
 package net.epiloum.eats;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 import lombok.*;
 
 @Entity
@@ -18,6 +20,10 @@ public class Shop {
 
     @Column(nullable = false)
     private String location;
+
+    @OneToMany(mappedBy = "shop")
+    @JsonIgnoreProperties("shop")
+    private List<Dish> dishes;
 
     @Column(name = "created_at", nullable = false, updatable = false)
     @Setter(AccessLevel.NONE)
